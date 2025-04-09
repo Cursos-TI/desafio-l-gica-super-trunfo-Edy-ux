@@ -21,7 +21,7 @@ struct Carta
 };
 
 // Função para cadastrar os dados de uma carta
-void cadastrarCarta(Carta *carta)
+void cadastrarCarta(struct Carta *carta)
 {
     printf("Estado: ");
     scanf("%s", &carta->estado);
@@ -50,7 +50,7 @@ void cadastrarCarta(Carta *carta)
 }
 
 // Função para comparar duas cartas e determinar o vencedor
-void compararCartas(Carta carta1, Carta carta2, int atributo)
+void compararCartas(struct Carta carta1, struct Carta carta2, int atributo)
 {
 
     // Comparar os atributos das cartas com base no atributo escolhido
@@ -113,7 +113,7 @@ void compararCartas(Carta carta1, Carta carta2, int atributo)
 int main()
 {
     int atributo;
-    Carta carta1, carta2;
+    struct Carta carta1, carta2;
 
     cadastrarCarta(&carta1);
     cadastrarCarta(&carta2);
