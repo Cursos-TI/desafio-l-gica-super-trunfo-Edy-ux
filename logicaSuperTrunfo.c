@@ -6,7 +6,7 @@ O jogo consiste em duas cartas, cada uma representando uma cidade do Brasil.
 O jogador escolhe um atributo (população, área, PIB ou pontos turísticos) e compara os valores das cartas.
 */
 
-//  Estrutuca de uma carta
+// Estrutuca de uma carta
 struct Carta
 {
     char estado[50];
@@ -53,14 +53,13 @@ void cadastrarCarta(struct Carta *carta)
 void compararCartas(struct Carta carta1, struct Carta carta2, int atributo)
 {
 
+    printf("Comparação de cartas (Atributo: %s)\n", atributo == 1 ? "População" : atributo == 2 ? "Área"
+                                                                              : atributo == 3   ? "PIB"                                                                                          : "Pontos turísticos");
     // Comparar os atributos das cartas com base no atributo escolhido
     // 1 - População
     // 2 - Área
     // 3 - PIB
     // 4 - Pontos turísticos
-    printf("Comparação de cartas (Atributo: %s)\n", atributo == 1 ? "População" : atributo == 2 ? "Área"
-                                                                              : atributo == 3   ? "PIB"
-                                                                                                : "Pontos turísticos");
     switch (atributo)
     {
     case 1:
@@ -74,30 +73,30 @@ void compararCartas(struct Carta carta1, struct Carta carta2, int atributo)
             printf("Empate");
         break;
     case 2:
-        printf("Carta 1: %s: %f \n", carta1.nomeCidade, carta1.area);
-        printf("Carta 2: %s: %f \n", carta2.nomeCidade, carta2.area);
+        printf("Carta 1: %s: %f \n", carta1.area, carta1.area);
+        printf("Carta 2: %s: %f \n", carta2.area, carta2.area);
         if ((int)(carta1.area > carta2.area))
-            printf("carta1 venceu"); // carta1 vence
+            printf("carta1 venceu"); 
         else if (carta1.area < carta2.area)
-            printf("carta1 venceu"); // carta2 vence
+            printf("carta1 venceu"); 
         else
             printf("Empate");
         break;
     case 3:
-        printf("Carta 1: %s: %f \n", carta1.nomeCidade, carta1.pib);
-        printf("Carta 2: %s: %f \n", carta2.nomeCidade, carta2.pib);
+        printf("Carta 1: %s: %f \n", carta1.pib, carta1.pib);
+        printf("Carta 2: %s: %f \n", carta2.pib, carta2.pib);
         if ((int)(carta1.pib > carta2.pib))
-            printf("carta1 venceu"); // carta1 vence
+            printf("carta1 venceu");
         else if (carta1.pib < carta2.pib)
-            printf("carta1 venceu"); // carta2 vence
+            printf("carta1 venceu");
         else
             printf("Empate");
         break;
     case 4:
-        printf("Carta 1: %s: %d \n", carta1.nomeCidade, carta1.pontosTuristicos);
-        printf("Carta 2: %s: %d \n", carta2.nomeCidade, carta2.pontosTuristicos);
+        printf("Carta 1: %s: %d \n", carta1.pontosTuristicos, carta1.pontosTuristicos);
+        printf("Carta 2: %s: %d \n", carta2.pontosTuristicos, carta2.pontosTuristicos);
         if ((int)(carta1.pontosTuristicos > carta2.pontosTuristicos))
-            printf("carta1 venceu"); // carta1 vence
+            printf("carta1 venceu"); //
         else if (carta1.pontosTuristicos < carta2.pontosTuristicos)
             printf("carta1 venceu \n"); // carta2 vence
         else
@@ -126,7 +125,7 @@ int main()
     printf("=============================\n");
 
     scanf("%d", &atributo);
-    // Mostrar vendedor
+    // Mostrar vencedor
     compararCartas(carta1, carta2, atributo);
 
     return 0;
